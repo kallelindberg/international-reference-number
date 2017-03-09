@@ -50,15 +50,15 @@ namespace international_reference_number
             return _output;
         }
 
-        public bool CheckReferenceNumber()
+        public bool CheckReferenceNumber(string s)
         {
-            int[] procarray = new int[_output.Length+2];
+            int[] procarray = new int[s.Length+2];
 
             i = 0;
-            for (int c = 4; c < _output.Length; c++)
+            for (int c = 4; c < s.Length; c++)
             {
 
-                int.TryParse(_output[c].ToString(), out procarray[i]);
+                int.TryParse(s[c].ToString(), out procarray[i]);
                 i++;
             }
             for (int c = 0; c < 4; c++)
@@ -68,7 +68,7 @@ namespace international_reference_number
             }
             for (int c = 2; c < 4; c++)
             {
-                int.TryParse(_output[c].ToString(), out procarray[i]);
+                int.TryParse(s[c].ToString(), out procarray[i]);
                 i++;
             }
             decimal.TryParse(string.Join("", procarray), out _number);

@@ -13,7 +13,7 @@ namespace international_reference_number
             var number1 = new ReferenceNumber("2348236");
 
             number1.CreateReferenceNumber();
-            if (number1.CheckReferenceNumber() == true)
+            if (number1.CheckReferenceNumber(number1.Output) == true)
             {
                 Console.WriteLine(number1.Output + " OK!");
             }
